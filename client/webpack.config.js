@@ -14,7 +14,7 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
-    plugins: [ // TODO: Add and configure workbox plugins for a service worker and manifest file.
+    plugins: [ // Add and configure workbox plugins for a service worker and manifest file.
     new HtmlWebpackPlugin({
       template: './index.html',
       title: 'Just Another Text Editor',
@@ -24,10 +24,12 @@ module.exports = () => {
       short_name: 'JATE',
       description: 'What you see is what you get.',
       background_color: '#ffffff',
+      fingerprints: false,
       icons: [
         {
           src: path.resolve('src/images/logo.png'),
-          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          destination: path.join('assets', 'icons')
         },
       ]
     }),
