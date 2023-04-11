@@ -13,6 +13,7 @@ module.exports = () => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
+      clean: true
     },
     plugins: [ // Add and configure workbox plugins for a service worker and manifest file.
     new HtmlWebpackPlugin({
