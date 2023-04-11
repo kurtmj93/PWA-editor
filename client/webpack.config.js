@@ -25,6 +25,7 @@ module.exports = () => {
       description: 'What you see is what you get.',
       background_color: '#ffffff',
       fingerprints: false,
+      publicPath: '/',
       icons: [
         {
           src: path.resolve('src/images/logo.png'),
@@ -47,7 +48,7 @@ module.exports = () => {
         },
         { // Add Babel to webpack
           test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
